@@ -1,0 +1,30 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<section class="registration-page">
+    <div class="container">
+
+        <h1>Welcome to the user signup page ...</h1>
+
+        <form action="{% url 'signup' %}" method="POST">
+
+            {% csrf_token %}
+            {{ signup_form |crispy }}
+
+            <div class="btn-box">
+                <button type="submit" class="register-btn btn btn-primary">signup</button>
+            </div>
+
+        </form>
+
+    </div>
+</section>
+
+{% endblock %}
+
+
+
+

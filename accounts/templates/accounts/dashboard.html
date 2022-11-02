@@ -1,0 +1,17 @@
+<h1>welcome to the user dashboard ...</h1>
+
+{% if user.is_authenticated %}
+<h2>{{user.first_name}} {{user.last_name}}</h2>
+
+<br>
+<a href="{% url 'logout' %}">logout</a>
+<br>
+
+{% else %}
+<a href="{% url 'signup' %}">signup</a>
+<br>
+<a href="{% url 'login' %}">login</a>
+{% endif %}
+
+
+
